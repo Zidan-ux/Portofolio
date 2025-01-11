@@ -1,0 +1,654 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Portofolio Website
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+   body {
+    font-family: 'Inter', sans-serif;
+        }
+        .hamburger-menu {
+            display: none;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900">
+  <!-- Navigation -->
+  <nav class="bg-white fixed w-full z-10 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Brand -->
+      <div class="text-3xl font-extrabold text-gray-800">
+        ZidanArif.
+      </div>
+  
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu text-3xl cursor-pointer text-gray-800 md:hidden">
+        <i class="fas fa-bars"></i>
+      </div>
+  
+      <!-- Navigation Links (Desktop) -->
+      <ul class="nav-links hidden md:flex space-x-6 text-lg font-semibold text-gray-700">
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#beranda">Beranda</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#tentang_saya">Tentang Saya</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#portofolio">Portofolio</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden bg-gray-100 p-4 shadow-md">
+      <ul class="flex flex-col space-y-4 text-lg font-semibold text-gray-700">
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#beranda">Beranda</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#tentang_saya">Tentang Saya</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#portofolio">Portofolio</a>
+        </li>
+        <li>
+          <a class="relative px-4 py-2 hover:bg-blue-500 hover:text-white rounded-lg transition" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  <!-- Home Section -->
+   
+  <section class="h-screen bg-white relative flex items-center" id="beranda">
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start">
+      <!-- Kolom Kiri: Teks -->
+      <div class="w-full lg:w-1/2 lg:pr-8">
+        <h1 class="text-6xl font-bold">Halo, saya</h1>
+        <h2 id="dynamic-text" class="text-6xl font-bold text-blue-500"></h2>
+        <p class="max-w-xl my-6">
+            <b>Saya seorang mahasiswa Teknik Informatika di Universitas Sains Al-Qur'an</b> saya belum memiliki keahlian di bidang apapun, akan tetapi saya berminat dan mulai belajar mengenai <i>desainer ui/ux</i>. Saya belum memiliki pengalaman yang cukup, akan tetapi saya akan terus belajar dan berusaha untuk menjadi seorang desainer yang handal. Saya juga memiliki minat dibidang <b> Design grafis</b> dan <b> Web Development</b>
+        </p>
+        <div class="flex space-x-4 mb-6">
+          <a class="bg-transparent border border-blue-500 text-blue-500 px-6 py-2 rounded-full hover:bg-blue-500 hover:text-white flex items-center space-x-2" href="#kontak">
+            <span>HUBUNGI SAYA</span>
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Foto dengan Outline Abstrak Ganda -->
+<div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+  <div class="relative abstract-mask">
+    <!-- Foto -->
+    <img
+      alt="profile"
+      class="photo"
+      src="assets/img/profile.jpg"
+    />
+    <!-- Outline Abstrak Putih -->
+    <div class="outline-mask outline-white absolute inset-0"></div>
+    <!-- Outline Abstrak Berwarna -->
+    <div class="outline-mask outline-color absolute inset-0"></div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  /* Container Foto Abstrak */
+.abstract-mask {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  clip-path: polygon(
+    10% 0%, 90% 5%, 100% 30%, 85% 75%, 50% 100%, 15% 85%, 0% 50%, 10% 15%
+  );
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Animasi Bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Animasi Float Move */
+@keyframes float-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+  /* Foto dengan Ukuran Tetap */
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Membuat foto tetap proporsional tanpa stretch */
+    border-radius: 20px;
+  }
+
+  /* Outline Abstrak */
+  .outline-mask {
+    clip-path: polygon(
+      20% 0%, 80% 10%, 100% 40%, 90% 80%, 70% 100%, 30% 90%, 0% 60%, 10% 20%
+    );
+    border-radius: 20px;
+  }
+
+  /* Outline Putih (Transparan) */
+  .outline-white {
+    border: 10px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+
+  /* Outline Berwarna */
+  .outline-color {
+    border: 10px solid #3b82f6;
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  /* Animasi Melayang */
+  @keyframes float-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(15px, -10px);
+    }
+    50% {
+      transform: translate(-20px, 20px);
+    }
+    75% {
+      transform: translate(10px, -15px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+</style>
+
+  
+  </section>
+  
+  <!-- Script Animasi -->
+  <script>
+    const textElement = document.getElementById("dynamic-text");
+    const texts = ["Zidane Taufiqurrahman Arif", "Desainer Ui/Ux"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentText = texts[textIndex];
+      textElement.innerHTML = currentText.slice(0, charIndex) + (isDeleting ? "|" : "");
+  
+      if (!isDeleting && charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(type, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, 1000);
+      }
+    }
+  
+    type();
+  </script>
+  
+  
+  
+  
+  
+  <!-- About Section -->
+  <!-- Tambahkan file CSS eksternal -->
+<!-- Tambahkan file CSS eksternal -->
+<style>
+  /* Animasi Hover pada Skill Tags */
+  .skill-tag {
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .skill-tag:hover {
+      transform: scale(1.1); /* Memperbesar tag saat hover */
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
+  }
+
+  /* Warna Skill Tags */
+  .microsoft-tools {
+      background-color: #4F46E5; /* Ungu */
+  }
+  .microsoft-tools:hover {
+      background-color: #4338CA; /* Ungu lebih gelap */
+  }
+
+  .design-tools {
+      background-color: #10B981; /* Hijau */
+  }
+  .design-tools:hover {
+      background-color: #059669; /* Hijau lebih gelap */
+  }
+
+  .development-tools {
+      background-color: #F59E0B; /* Oranye */
+  }
+  .development-tools:hover {
+      background-color: #D97706; /* Oranye lebih gelap */
+  }
+
+  /* Efek Fade-in dan Slide-up */
+  .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  /* Kontainer Utama */
+  .about-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  /* Perkenalkan */
+  .intro-box {
+      background: linear-gradient(to right, #FF0080, #7928CA);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+  }
+
+  .intro-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+  }
+
+  .intro-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+  }
+
+  /* Informasi Pribadi */
+  .personal-info {
+      background: linear-gradient(to bottom right, #3B82F6, #9333EA);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .personal-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .personal-info::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      z-index: 0;
+  }
+
+  .personal-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #FFF9C4;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      position: relative;
+  }
+
+  .personal-info ul li {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #E0E0E0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+  }
+
+  /* Bagian Skill */
+  .skills-container {
+      width: 100%;
+      margin-top: 2rem;
+  }
+
+  .skills-container h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+
+  .skill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+  }
+
+  .skill-group span {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+  }
+
+  /* Responsivitas */
+  @media (max-width: 768px) {
+      .about-container {
+          flex-direction: column;
+      }
+
+      .skills-container {
+          text-align: center;
+      }
+  }
+</style>
+
+<section id="tentang_saya" class="py-16 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Tentang Saya</h2>
+
+    <div class="about-container">
+      <div class="intro-box fade-in">
+          <h2>Perkenalkan</h2>
+          <p>
+              <b>Saya mahasiswa Teknik Informatika semester 5 di Universitas Sains Al-Qur'an.</b> Saya sangat tertarik dalam dunia desain, khususnya <i>UI/UX Design</i> dan <i>Fotografi</i>. Saat ini, saya sedang memperdalam keahlian di bidang ini.
+          </p>
+      </div>
+
+      <div class="personal-info fade-in">
+          <h3>Informasi Pribadi</h3>
+          <ul>
+            <li><i class="fas fa-birthday-cake"></i><span><b>Tanggal Lahir:</b> 24 Oktober 2004</span></li>
+            <li><i class="fas fa-envelope"></i> <span><b>Email:</b> zidanne081@gmail.com</span></li>
+            <li><i class="fas fa-map-marker-alt"></i> <span><b>Kota:</b> Kudus, Jawa Tengah</span></li>
+            <li><i class="fas fa-user-graduate"></i> <span><b>Status:</b> Mahasiswa</span></li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="skills-container fade-in">
+      <h2>Keahlian dan Tools</h2>
+
+      <div class="skill-group">
+          <span class="skill-tag microsoft-tools"><i class="fas fa-file-word"></i> Microsoft Word</span>
+          <span class="skill-tag microsoft-tools"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+          <span class="skill-tag microsoft-tools"><i class="fas fa-file-powerpoint"></i> PowerPoint</span>
+          <span class="skill-tag microsoft-tools"><i class="fas fa-diagram-project"></i> Visio</span>
+      </div>
+
+      <div class="skill-group">
+          <span class="skill-tag design-tools"><i class="fas fa-paint-brush"></i> Adobe Photoshop</span>
+          <span class="skill-tag design-tools"><i class="fas fa-drafting-compass"></i> Figma</span>
+          <span class="skill-tag design-tools"><i class="fas fa-image"></i> Canva</span>
+          <span class="skill-tag design-tools"><i class="fas fa-vector-square"></i> Inkscape</span>
+      </div>
+
+      <div class="skill-group">
+          <span class="skill-tag development-tools"><i class="fas fa-code"></i> HTML</span>
+          <span class="skill-tag development-tools"><i class="fas fa-code"></i> CSS</span>
+          <span class="skill-tag development-tools"><i class="fas fa-code"></i> JavaScript</span>
+          <span class="skill-tag development-tools"><i class="fas fa-server"></i> PHP</span>
+      </div>
+    </div>
+</section>
+
+<script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  function handleScroll() {
+      const triggerHeight = window.innerHeight * 0.8;
+
+      fadeElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+
+          if (elementTop < triggerHeight) {
+              element.classList.add('visible');
+          } else {
+              element.classList.remove('visible');
+          }
+      });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+</script>
+
+
+  
+<!-- Portofolio Section -->
+<section class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600" id="portofolio">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-extrabold mb-12 text-center text-white">Portofolio</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="portfolio-container">
+      <!-- Project 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 hover:translate-y-2">
+        <img alt="Project 1" class="mb-4 rounded-lg transition-transform duration-300 transform hover:scale-110 hover:rotate-3" src="assets/img/mockup 2.png" />
+        <h3 class="text-2xl font-bold mb-2 text-gray-900">Carwash</h3>
+        <p class="mb-4 text-gray-700">
+          A sleek and intuitive UI/UX design for a car wash service app, featuring an effortless booking experience, service details, and personalized user interactions. Designed with a clean layout and vibrant colors to ensure user satisfaction and engagement.
+        </p>
+        <div class="flex space-x-2 mb-4">
+          <div class="bg-violet-200 text-violet-500 px-4 py-2 rounded-full text-sm font-medium transition-transform duration-300 transform hover:scale-105">
+            Figma
+          </div>
+        </div>
+        <a class="text-blue-500 hover:text-blue-700 transition duration-200 ease-in-out transform hover:scale-105" href="https://www.figma.com/design/3vlbDYdZpg7dNnBtbAle5j/BDT?node-id=284-598&node-type=canvas&t=N1taGzSpiOpYPW7p-0" target="_blank" rel="noopener">
+          Lihat Prototipe
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="py-16 bg-white" id="kontak">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Kontak Saya</h2>
+        
+        <!-- Pesan Kesalahan -->
+        <div id="error-message" class="text-red-500 text-center mb-4"></div>
+
+        <form class="max-w-lg mx-auto mb-8" action="kirim-pesan.php" method="POST">
+            <div class="mb-4">
+                <label class="block text-lg font-bold mb-2" for="nama">Nama</label>
+                <input class="w-full p-2 border border-gray-300 rounded-lg" id="nama" name="nama" type="text" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-lg font-bold mb-2" for="email">Email</label>
+                <input class="w-full p-2 border border-gray-300 rounded-lg" id="email" name="email" type="email" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-lg font-bold mb-2" for="pesan">Pesan</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded-lg" id="pesan" name="pesan" rows="4" required></textarea>
+            </div>
+            <button class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600" type="submit">
+                Kirim Pesan
+            </button>
+        </form>
+
+        <div class="text-center">
+          <p class="text-lg mb-4">Atau hubungi saya langsung di:</p>
+          <p class="text-lg mb-4">
+              Email: <a href="mailto:zidannearif081@gmail.com" class="text-blue-500 hover:text-blue-700">zidannearif081@gmail.com</a>
+          </p>
+      </div>
+    </div>
+</section>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function (event) {
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+
+        if (!nama || !email || !pesan) {
+            event.preventDefault();
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.textContent = "Semua field harus diisi!";
+        }
+    });
+</script>
+
+<script>
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+        document.querySelector('.mobile-menu').classList.toggle('active');
+    });
+</script>
+
+  <head>
+  
+    <title>Footer Design</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      footer {
+        text-align: center;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        padding: 20px;
+        background-color: #0f172a;
+        color: #94a3b8;
+      }
+  
+      .footer-links {
+        margin-bottom: 15px;
+      }
+  
+      .footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+  
+      .footer-links a:hover {
+        color: #60a5fa;
+        text-decoration: underline;
+      }
+  
+      .social-icons {
+        margin-bottom: 15px;
+      }
+  
+      .social-icons a {
+        margin: 0 10px;
+        font-size: 24px;
+        color: #475569;
+        text-decoration: none;
+      }
+  
+      .social-icons a:hover {
+        color: #60a5fa;
+      }
+  
+      .footer-copyright {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="footer-links">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang_saya">Tentang Saya</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="social-icons">
+        <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://github.com/Zidan-ux" aria-label="Kunjungi github" target="_blank" rel="noopener">
+          <i class="fab fa-github">
+          </i>
+         </a>
+         <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://t.me/ZidaneArif" aria-label="Kunjungi telegram" target="_blank" rel="noopener">
+          <i class="fab fa-telegram">
+          </i>
+         </a>
+         <a class="text-2xl text-green-500 hover:text-green-600" href="https://api.whatsapp.com/send/?phone=%2B6287703242139&text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20Anda&type=phone_number&app_absent=0" aria-label="Kunjungi whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i>
+      </a>
+      
+         <a class="text-2xl text-blue-500 hover:text-blue-500" href="https://instagram.com/__zidanearf" aria-label="Kunjungi Instagram" target="_blank" rel="noopener">
+          <i class="fab fa-instagram">
+          </i>
+         </a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2025 Zidane Arif, Semua hak dilindungi undang-undang.
+      </div>
+    </footer>
+ </body>
+</html>
